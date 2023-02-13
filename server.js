@@ -29,11 +29,11 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use(passport.session());
-
+// Routes
 app.use("/auth", auth);
 app.use("/file", file);
 
+// Home route
 app.get("/", (req, res) => {
   res.render("home");
 });
