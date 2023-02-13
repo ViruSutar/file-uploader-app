@@ -9,15 +9,8 @@ const passport = require("passport");
 const file = require("./Routes/FileRoute");
 dotenv.config({ path: "./.env" });
 const mongoUrl = process.env.MONGO_URL;
-const bodyParser = require("body-parser");
 app.use(express.json());
 
-// Configurations for "body-parser"
-app.use(
-  bodyParser.urlencoded({
-    extended: true,
-  })
-);
 
 // database
 connectDb(mongoUrl);
