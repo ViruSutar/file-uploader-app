@@ -11,10 +11,11 @@ router.get('/google',passport.authenticate('google',{
 }),googleLogin)
 
 router.get('/google/callback',passport.authenticate('google'),(req,res)=>{
-    res.render('main')
+    // res.render('main')
+    res.redirect('/file/getFiles')
 })
 
 router.get('/logout',isLoggedIn,logout)
 
 
-module.exports = router;
+module.exports = router; 

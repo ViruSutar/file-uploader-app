@@ -14,8 +14,9 @@ class FilesController {
         fileName: req.file.filename,
         userId,
       });
-
-      return res.send({ message: "File was uploaded successfully", filePath });
+      
+      res.redirect('/file/getFiles')
+      // return res.send({ message: "File was uploaded successfully", filePath });
     } catch (error) {
       console.log(error);
     }
@@ -30,7 +31,7 @@ class FilesController {
     }
     let files = await File.find({ userId: userId });
 
-    return res.render("myfiles", { files });
+    return res.render("main", { files });
    } catch (error) {
     console.log(error);
    }

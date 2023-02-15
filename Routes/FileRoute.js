@@ -15,7 +15,7 @@ const multerStorage = multer.diskStorage({
   });
 
 
-const upload = multer({storage:multerStorage, dest: "public/files" });
+const upload = multer({storage:multerStorage, dest: "../files" });
 
 router.post('/upload',isLoggedIn,upload.single('myFile'),uploadFile)
 router.get('/getFiles',isLoggedIn,getUserFiles)
